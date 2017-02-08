@@ -1,0 +1,4 @@
+project=ed_platform_api
+architecture=container
+test=minitest
+template=erb
