@@ -2,13 +2,28 @@
 <html>
   <head>
     <title>Admin</title>
+
     <%= favicon %>
+    <%= stylesheet 'app' %>
   </head>
   <body>
-    <header>
+    <header class="header">
       <h1>Ed platform</h1>
     </header>
-    <main><%= yield %></main>
-    <footer></foot>
+    <main class="main">
+      <aside>
+        <menu>
+          <ul>
+            <li><a href="#">Users</a></li>
+          </ul>
+        </menu>
+      </aside>
+      <aside>
+        <%= yield %>
+      </aside>
+    </main>
+    <footer class="footer">
+      footer
+    </footer>
   </body>
 </html>
