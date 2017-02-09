@@ -13,14 +13,14 @@
   <body>
     <main class="container-fluid main">
       <header class="navbar">
-        <h1 class="navbar-brand"><a href="#">Ed platoform admin</a></h1>
+        <h1 class="navbar-brand"><a href="<%= routes.root_path %>">Ed platoform admin</a></h1>
       </header>
       <section class="row content">
         <aside class="col-md-2">
           <%= render partial: "partials/sidebar" %>
         </aside>
         <aside class="col-md-10">
-          app
+          <%= yield %>
         </aside>
       </section>
       <footer>&copy; ed-plaform</footer>
