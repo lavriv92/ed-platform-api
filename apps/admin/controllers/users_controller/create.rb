@@ -1,10 +1,6 @@
 module Admin::Controllers::UsersController
   class Create
     include Admin::Action
-    # include Admin::View
-
-    # template 'users/new'
-    expose :user
 
     params do
       required(:user).schema do
