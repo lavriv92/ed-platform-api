@@ -3,8 +3,13 @@
   <head>
     <title>Auth</title>
     <%= favicon %>
+
+    <%= stylesheet "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
+    <%= stylesheet "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" %>
   </head>
   <body>
-    <%= yield %>
+    <section class="container">
+      <%= yield %>
+    </section>
   </body>
 </html>

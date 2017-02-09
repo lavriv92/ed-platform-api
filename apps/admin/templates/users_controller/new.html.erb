@@ -12,34 +12,34 @@
   <% end %>
 
   <%=
-    form_for :user, routes.users_create_path do
-      div class: 'form-group' do
-        label :email
-        text_field :email, class: 'form-control'
+    form_for(:user, routes.users_create_path) do
+      div(class: 'form-group') do
+        label(:email)
+        text_field(:email, class: 'form-control')
       end
 
-      div class: 'form-group' do
-        label :password
-        text_field :password, class: 'form-control'
+      div(class: 'form-group') do
+        label(:password)
+        text_field(:password, class: 'form-control')
       end
 
-      div class: 'form-group' do
-        label :password_confirmation
-        text_field :password_confirmation, class: 'form-control'
+      div(class: 'form-group') do
+        label(:password_confirmation)
+        text_field(:password_confirmation, class: 'form-control')
       end
 
-      div class: 'form-group' do
-        label :first_name
-        text_field :first_name, class: 'form-control'
+      div(class: 'form-group') do
+        label(:first_name)
+        text_field(:first_name, class: 'form-control')
       end
 
-      div class: 'form-group' do
-        label :last_name
-        text_field :last_name, class: 'form-control'
+      div(class: 'form-group') do
+        label(:last_name)
+        text_field(:last_name, class: 'form-control')
       end
 
-      div class: 'controlls' do
-        submit 'Send', class: 'btn btn-success btn-block right'
+      div(class: 'controlls') do
+        submit('Send', class: 'btn btn-success right')
       end
     end
   %>
