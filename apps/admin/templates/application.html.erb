@@ -4,26 +4,28 @@
     <title>Admin</title>
 
     <%= favicon %>
+
+    <%= stylesheet "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
+    <%= stylesheet "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" %>
     <%= stylesheet 'app' %>
+
   </head>
   <body>
-    <header class="header">
-      <h1>Ed platform</h1>
-    </header>
-    <main class="main">
-      <aside>
-        <menu>
-          <ul>
-            <li><a href="#">Users</a></li>
-          </ul>
-        </menu>
-      </aside>
-      <aside>
-        <%= yield %>
-      </aside>
+    <main class="container-fluid main">
+      <header class="navbar">
+        <h1 class="navbar-brand"><a href="#">Ed platoform admin</a></h1>
+      </header>
+      <section class="row content">
+        <aside class="col-md-2">
+          <%= render partial: "partials/sidebar" %>
+        </aside>
+        <aside class="col-md-10">
+          app
+        </aside>
+      </section>
+      <footer>&copy; ed-plaform</footer>
     </main>
-    <footer class="footer">
-      footer
-    </footer>
+
+    <%= javascript "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" %>
   </body>
 </html>
