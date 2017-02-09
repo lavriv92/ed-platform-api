@@ -1,0 +1,36 @@
+<h2>New user</h2>
+
+<section class="col-md-6">
+  <%=
+    form_for :user, '/users' do
+      div class: 'form-group' do
+        label :email
+        text_field :email, class: 'form-control'
+      end
+
+      div class: 'form-group' do
+        label :password
+        text_field :password, class: 'form-control'
+      end
+
+      div class: 'form-group' do
+        label :confirm_password
+        text_field :confirm_password, class: 'form-control'
+      end
+
+      div class: 'form-group' do
+        label :first_name
+        text_field :first_name, class: 'form-control'
+      end
+
+      div class: 'form-group' do
+        label :last_name
+        text_field :last_name, class: 'form-control'
+      end
+
+      div class: 'controlls' do
+        submit 'Send', class: 'btn btn-success btn-block right'
+      end
+    end
+  %>
+</section>

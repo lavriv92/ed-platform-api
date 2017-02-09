@@ -1,11 +1,10 @@
 module Admin::Controllers::UsersController
-  class Index
+  class New
     include Admin::Action
 
-    expose :users
+    expose :user
 
     def call(params)
-      @users = UserRepository.new.all
     end
   end
 end

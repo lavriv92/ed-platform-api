@@ -1,5 +1,28 @@
 <h2>Users</h2>
 
-<section>
-  users list
-</section>
+<table class="table table-bordered table-stripped">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if users.any? %>
+      <% users.each do |user| %>
+        <tr>
+          <td><% user.first_name %></td>
+          <td><% user.last_name %></td>
+          <td><% user.email %></td>
+          <td>aaa</td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr class="placeholder">
+        <td colspan="3">Not found any users. <a href="<%= routes.users_new_path %>">Add new user</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
