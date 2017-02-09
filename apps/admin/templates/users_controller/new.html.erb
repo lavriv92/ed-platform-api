@@ -1,8 +1,18 @@
 <h2>New user</h2>
 
 <section class="col-md-6">
+  <% unless params.valid? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li class="text-danger"><%= message %></li>
+      <% end %>
+    <ul>
+  </div>
+  <% end %>
+
   <%=
-    form_for :user, '/users' do
+    form_for :user, routes.users_create_path do
       div class: 'form-group' do
         label :email
         text_field :email, class: 'form-control'
@@ -14,8 +24,8 @@
       end
 
       div class: 'form-group' do
-        label :confirm_password
-        text_field :confirm_password, class: 'form-control'
+        label :password_confirmation
+        text_field :password_confirmation, class: 'form-control'
       end
 
       div class: 'form-group' do

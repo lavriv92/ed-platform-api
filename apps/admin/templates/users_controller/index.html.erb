@@ -1,5 +1,9 @@
 <h2>Users</h2>
 
+
+<div class="panel">
+  <a href="<%= routes.users_new_path %>">Create new user</a>
+</div>
 <table class="table table-bordered table-stripped">
   <thead>
     <tr>
@@ -13,9 +17,9 @@
     <% if users.any? %>
       <% users.each do |user| %>
         <tr>
-          <td><% user.first_name %></td>
-          <td><% user.last_name %></td>
-          <td><% user.email %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= user.email %></td>
           <td>aaa</td>
         </tr>
       <% end %>
