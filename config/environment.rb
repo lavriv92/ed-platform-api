@@ -2,9 +2,11 @@ require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
 require_relative '../lib/ed_platform_api'
+require_relative '../apps/auth/application'
 require_relative '../apps/admin/application'
 
 Hanami.configure do
+  mount Auth::Application, at: '/auth'
   mount Admin::Application, at: '/admin'
 
   model do
