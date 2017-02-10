@@ -10,8 +10,11 @@ module Auth::Controllers::AuthController
     end
 
     def call(params)
-      p params
-      redirect_to '/admin/'
+      if params.valid?
+        redirect_to '/admin/'
+      else
+        self.status = 401
+      end
     end
   end
 end
