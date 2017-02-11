@@ -6,6 +6,7 @@ module Admin::Controllers::UsersController
 
     def call(params)
       @users = UserRepository.new.all
+      p @users
     end
   end
 end

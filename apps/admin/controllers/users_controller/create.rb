@@ -14,7 +14,7 @@ module Admin::Controllers::UsersController
 
     def call(params)
       if params.valid?
-        UserRepository.new.create(params[:user])
+        UserRepository.new.create(User.new(params[:user]))
         redirect_to routes.users_path
       else
         p "redirect with error"

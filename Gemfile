@@ -7,6 +7,7 @@ gem 'hanami-model', '~> 0.7'
 
 gem 'sqlite3'
 gem 'jwt'
+gem 'bcrypt'
 
 group :development do
   # Code reloading

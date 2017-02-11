@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 module Auth::Controllers::AuthController
   class HandleLogin
     include Auth::Action

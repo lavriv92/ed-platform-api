@@ -1,7 +1,6 @@
 require 'jwt'
 
 module Authentication
-
   def self.included(base)
     base.class_eval do
       before :authenticate!
@@ -17,14 +16,15 @@ module Authentication
     @current_user ||= authenticate_user
   end
 
+private
   def authenticated?
     !!current_user
   end
 
   def authenticate_user
-    jwt = JWT.decode()
+    jwt = JWT.decode(payload, ENV['AUTH_SESSION_SECRET'], algorithm: 'HS256')
     user = UserRepository.find(jwt.user_id)
-    if user && !user.revoked
+    if !user.nil?
       return @current_user = user
     end
   end
