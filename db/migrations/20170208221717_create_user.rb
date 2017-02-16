@@ -4,7 +4,7 @@ Hanami::Model.migration do
       primary_key(:id)
 
       column(:email, String, null: false, unique: true, index: true)
-      column(:password, String)
+      column(:password_hash, String)
       column(:first_name, String)
       column(:last_name, String)
       column(:created_at, DateTime)

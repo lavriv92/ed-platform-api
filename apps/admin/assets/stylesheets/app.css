@@ -5,16 +5,28 @@
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: #f6f6f6;
 }
 
 header {
   flex: 0 0 auto;
+  background: #ffffff;
+}
+
+.white-section {
+  background: #ffffff;
+}
+
+.panel {
+  background: #ffffff;
 }
 
 .content {

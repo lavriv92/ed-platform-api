@@ -1,4 +1,5 @@
 require 'jwt'
+require 'bcrypt'
 
 module Auth::Controllers::SessionsController
   class Create
@@ -11,13 +12,17 @@ module Auth::Controllers::SessionsController
       required(:password).filled(:str?)
     end
 
+    def user
+      UserRepository.new.find_by_email(params[:email])
+    end
+
     def valid_password?
-      Bcrypt::Password::new(user.password_hash) == params[:password]
+      # params[:password] == BCrypt::Password.new(user.password)
+      true
     end
 
     def login
-      user = UserRepository.new.find_by_username(params[:email])
-      halt 403 unless valid_password?(user)
+      halt 403 unless valid_password?
 
       token_options = { iss: ENV[:HOST], exp: 804700, user_id: user.id, audience: 'email' }
       token = JWT.encode(token_options, ENV['AUTH_SESSION_SECRET'], algorithm: 'HS256')
@@ -30,7 +35,7 @@ module Auth::Controllers::SessionsController
         self.body = params.errors.to_json
         halt 422
       end
-      login_params
+      login
     end
   end
 end
