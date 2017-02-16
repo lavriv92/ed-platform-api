@@ -24,10 +24,12 @@ module Auth::Controllers::SessionsController
     def login
       halt 403 unless valid_password?
 
-      token_options = { iss: ENV[:HOST], exp: 804700, user_id: user.id, audience: 'email' }
-      token = JWT.encode(token_options, ENV['AUTH_SESSION_SECRET'], algorithm: 'HS256')
+      p user
+
+      token_options = { iss: ENV["HOST"], exp: 804700, user_id: user.id, audience: 'email' }
+      token = JWT.encode(token_options, ENV['AUTH_SESSION_SECRET'], 'none')
       self.status = 200
-      self.body = {token: token, user: user}.to_json
+      self.body = {token: token, user: user.to_h}.to_json
     end
 
     def call(params)
